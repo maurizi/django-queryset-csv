@@ -9,7 +9,7 @@ from django.http import HttpResponse
 from django.conf import settings
 if not settings.configured:
     # required to import ValuesQuerySet
-    settings.configure() # pragma: no cover
+    settings.configure()  # pragma: no cover
 
 from django.db.models.query import ValuesQuerySet
 
@@ -82,7 +82,6 @@ def write_csv(queryset, file_obj, field_header_map=None,
                        if field in field_names] +
                        [field for field in field_names
                         if field not in field_order])
-
 
     writer = csv.DictWriter(file_obj, field_names)
 
